@@ -37,10 +37,10 @@ public class Application {
     }
     
     @Bean
-	public CommandLineRunner cargarDatos() {
+	public CommandLineRunner cargarDatos() { 
 		return (args) -> {
 			Conocimiento ingles = new Conocimiento("Inglés");
-			Conocimiento frances = new Conocimiento("Francés");
+			Conocimiento italiano = new Conocimiento("Italiano");
 			Conocimiento java = new Conocimiento("Java");
 			Conocimiento spring = new Conocimiento("Spring");
 			Conocimiento jpa = new Conocimiento("JPA");
@@ -52,7 +52,7 @@ public class Application {
 			Conocimiento html = new Conocimiento("HTML");
 			
 			conocimientoDao.save(ingles);
-			conocimientoDao.save(frances);
+			conocimientoDao.save(italiano);
 			conocimientoDao.save(java);
 			conocimientoDao.save(spring);
 			conocimientoDao.save(javascript);
@@ -68,22 +68,14 @@ public class Application {
 			traductor.desactivar();
 			busquedaLaboralDao.save(traductor);
 			
-			BusquedaLaboral traductorFrances = new BusquedaLaboral("Traductor Francés");
-			traductorFrances.agregarConocimiento(frances);
-			busquedaLaboralDao.save(traductorFrances);
+			BusquedaLaboral traductorItaliano = new BusquedaLaboral("Traductor de Italiano");
+			traductorItaliano.agregarConocimiento(italiano);
+			busquedaLaboralDao.save(traductorItaliano);
 			
 			BusquedaLaboral javaDev = new BusquedaLaboral("Desarrollador Java");
 			javaDev.agregarConocimiento(java);
 			javaDev.agregarConocimiento(spring);
 			javaDev.agregarConocimiento(jpa);
-			
-			busquedaLaboralDao.save(javaDev);
-			
-			BusquedaLaboral javaDevIngles = new BusquedaLaboral("Desarrollador Java Bilingüe");
-			javaDevIngles.agregarConocimiento(java);
-			javaDevIngles.agregarConocimiento(spring);
-			javaDevIngles.agregarConocimiento(jpa);
-			javaDevIngles.agregarConocimiento(ingles);
 			
 			busquedaLaboralDao.save(javaDev);
 			
@@ -117,7 +109,7 @@ public class Application {
 			
 			Candidato sabeTodo = new Candidato("Juan", "Sabetodo");
 			Collection<Conocimiento> casiTodo = conocimientoDao.findAll();
-			casiTodo.remove(frances);
+			casiTodo.remove(italiano);
 			sabeTodo.agregarConocimientos(casiTodo);
 			
 			candidatosDao.save(sabeTodo);

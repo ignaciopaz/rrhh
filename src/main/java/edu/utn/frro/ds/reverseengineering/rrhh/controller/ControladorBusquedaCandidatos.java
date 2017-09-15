@@ -58,20 +58,17 @@ public class ControladorBusquedaCandidatos {
 	//para confirmar fecha y hora de entrevista. Este CU permite confirmar entrevistas con muchos candidatos 
 	@PostMapping("/entrevista/confirmar") 
 	public String confirmarEntrevista(@RequestParam(value="fecha", required=true) @DateTimeFormat(pattern="dd-MM-yyyy") Date fecha, @RequestParam(value="codCandidato", required=false, defaultValue="") Long codCandidato, 
-									@RequestParam(value="idBusquedaLaboral", required=true) Long idBusquedaLaboral, RedirectAttributes redir) {
+									@RequestParam(value="idBusquedaLaboral", required=true) Long idBusquedaLaboral, Model model) {
 		Candidato candidato = candidatosDao.getOne(codCandidato);
 		busquedaLaboral = busquedasDao.getOne(idBusquedaLaboral);
 		busquedaLaboral.agregarEntrevista(candidato, fecha); //patrón creador
 		busquedasDao.save(busquedaLaboral);
 		
-		redir.addFlashAttribute("candidato", candidato);
-		redir.addFlashAttribute("busquedaLaboral", busquedaLaboral);
-		redir.addFlashAttribute("fecha", fecha);
-		return "redirect:confirmacion"; //redirige para evitar que se guarde dos veces al refrescar el browser
+		model.addAttribute("candidato", candidato);
+		model.addAttribute("busquedaLaboral", busquedaLaboral);
+		model.addAttribute("fecha", fecha);
+		return "/entrevista/confirmacion"; 
 	}
 	
-	@RequestMapping("/entrevista/confirmacion") 
-	public String mostrarConfirmacion(Model model, RedirectAttributes redir) {
-		return "/entrevista/confirmacion";
-	}
+
 }
