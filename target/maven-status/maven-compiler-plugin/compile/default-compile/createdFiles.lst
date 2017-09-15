@@ -1,0 +1,14 @@
+edu\utn\frro\ds\reverseengineering\rrhh\BusquedaLaboral.class
+edu\utn\frro\ds\reverseengineering\rrhh\Candidato.class
+edu\utn\frro\ds\reverseengineering\rrhh\Application.class
+proj\domain\Customer.class
+edu\utn\frro\ds\reverseengineering\rrhh\Conocimiento.class
+edu\utn\frro\ds\reverseengineering\rrhh\ConocimientoDao.class
+edu\utn\frro\ds\reverseengineering\rrhh\ControladorBusquedaCandidatos.class
+proj\domain\City.class
+edu\utn\frro\ds\reverseengineering\rrhh\Entrevista.class
+edu\utn\frro\ds\reverseengineering\rrhh\CandidatosDao.class
+edu\utn\frro\ds\reverseengineering\rrhh\BusquedaLaboralDao.class
+proj\repository\CustomerRepository.class
+proj\controller\GreetingController.class
+proj\repository\CityRepository.class

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <title>RRHH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	  $( function() {
+	    $( "#fecha" ).datepicker({
+	    	  dateFormat: "dd-mm-yy",
+	    	  minDate: new Date()
+	    });
+	  } );
+  </script>
+</head>
+<body>
+    <form action="#" th:action="@{/entrevista/confirmar}" method="post" class="form-inline">    	
+		
+		<div class="container">
+		  <h2>Confirmar entrevista</h2>
+		  <p>Candidatos que tienen los conocimientos requeridos para la búsqueda <strong><span th:text="${busquedaLaboral.descripcion}"></span></strong></p>
+		  <input type="hidden" name="idBusquedaLaboral" th:value="${busquedaLaboral.idBusquedaLaboral}" />
+		  <div th:if="${candidatos.empty}" class="alert alert-warning">
+			No se encontraron candidatos que posean los conocimientos requeridos para la búsqueda.
+		  </div>
+		  <div th:if="${!candidatos.empty}">
+		  <div class="form-group">
+			  <table class="table table-hover table-striped">
+			    <thead>
+			      <tr>
+			        <th>Nombre</th>
+			        <th>Apellido</th>
+			        <th>Conocimientos</th>
+			        <th>Seleccionar</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr th:each="c : ${candidatos}">
+				   <td th:text="${c.nombre}"></td>
+				   <td th:text="${c.apellido}"></td>
+				   <td><a href="#" class="btn btn-primary"><span class="badge" th:text="${c.cantidadConocimientos}"></span></a></td>
+				   
+				   <td><input type="radio" name="codCandidato" th:value="${c.idCandidato}" required="true"></input></td>
+				</tr>
+			    </tbody>
+			  </table>
+		  </div>
+		  <div class="form-group">
+   			 <label for="fecha" class="control-label col-sm-2">Fecha de Entrevista:</label>
+   			 <div class="col-sm-2">
+		 	 	<input type="text" id="fecha" name="fecha" class="form-control" required="true" />
+		 	 </div>
+		  </div>
+		 </div>
+         <p><p><input th:if="${!candidatos.empty}" type="submit" value="Enviar" class="btn btn-primary"/> <a href="/entrevista/busquedas" class="btn btn-default" role="button">Volver</a></p></p>
+		</div>
+
+    </form>
+    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	
+</body>
+</html>
