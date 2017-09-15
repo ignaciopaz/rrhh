@@ -67,7 +67,7 @@ public class ControladorBusquedaCandidatos {
 		model.addAttribute("candidato", candidato);
 		model.addAttribute("busquedaLaboral", busquedaLaboral);
 		model.addAttribute("fecha", fecha);
-		return "/entrevista/confirmacion"; 
+		return "entrevista/confirmacion"; 
 	}
 	
 
