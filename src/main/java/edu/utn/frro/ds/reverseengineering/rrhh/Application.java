@@ -21,17 +21,13 @@ import edu.utn.frro.ds.reverseengineering.rrhh.domain.BusquedaLaboral;
 import edu.utn.frro.ds.reverseengineering.rrhh.domain.Candidato;
 import edu.utn.frro.ds.reverseengineering.rrhh.domain.Conocimiento;
 
-
 @SpringBootApplication
-@EnableWebMvc
-@EnableAutoConfiguration
-@ComponentScan
-@Configuration
 public class Application {
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 	@Autowired private BusquedaLaboralDao busquedaLaboralDao;
 	@Autowired private CandidatosDao candidatosDao;
 	@Autowired private ConocimientoDao conocimientoDao;
+	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
