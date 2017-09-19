@@ -122,6 +122,7 @@ public class Application {
 			Candidato candidatoNet = new Candidato("Peter", "PuntoNet");
 			candidatoNet.agregarConocimiento(net);
 			candidatoNet.agregarConocimiento(csharp);
+			candidatosDao.save(candidatoNet);
 			
 			Candidato candidatoNetFS = new Candidato("Peter", "FullNet");
 			candidatoNetFS.agregarConocimiento(net);
