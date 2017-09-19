@@ -39,7 +39,7 @@
 		
 		<div class="container">
 		  <h2>Confirmar entrevista</h2>
-		  <p>Candidatos que tienen los conocimientos requeridos para la búsqueda <strong><span th:text="${busquedaLaboral.descripcion}"></span></strong></p>
+		  <p>Candidatos que tienen conocimientos requeridos para la búsqueda <strong><span th:text="${busquedaLaboral.descripcion}"></span></strong></p>
 		  <input type="hidden" name="idBusquedaLaboral" th:value="${busquedaLaboral.idBusquedaLaboral}" />
 		  <div th:if="${candidatos.empty}" class="alert alert-warning">
 			No se encontraron candidatos que posean los conocimientos requeridos para la búsqueda.
