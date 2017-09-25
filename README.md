@@ -19,10 +19,17 @@ Para importa el proyecto en Eclipse se deben seguir los siguientes pasos:
 5. Clic en Next.
 6. Clic en Finish.
 
-## Para ejecutar la aplicación 
+## Descargar dependencias
+Antes de ejecutar el proyecto por primera vez se deben descargar las dependencias a través de Maven:
+1. Ir al archivo **pom.xml**
+2. Hacer clic derecho sobre el mismo y ejecutar **Run as > Maven Clean** 
+3. Volver a hacer clic derecho sobre el pom.xml y ejecutar **Run as > Maven Install**.
+
+## Correr la aplicación
+Para ejecutar la aplicación:
 1. Ir al Paquete edu.utn.frro.ds.reverseengineering.rrhh.
 2. Clic derecho en **Application.java** y hacer **Run as Java Application**.
-3. Abrir el browse en [http://localhost:8080/](http://localhost:8080/)
+3. Abrir el browser en [http://localhost:8080/](http://localhost:8080/)
 
 ## Como ver la base de datos H2
 Para ver la consola de la base de datos [H2](http://www.h2database.com/) de la aplicación:
