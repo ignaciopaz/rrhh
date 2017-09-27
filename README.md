@@ -20,7 +20,7 @@ Aplicación de ejemplo con Spring para agendar entrevistas con candidatos según l
 Para importa el proyecto en Eclipse se deben seguir los siguientes pasos:
 1. Ir **Menú File > Import > Git > Projects from Git**.
 2. Seleccionar **"Clone URI"** e ingresar los siguientes datos:
-   - URI: [https://github.com/ignaciopaz/rrhh](https://github.com/ignaciopaz/rrhh)
+   - URI: [https://github.com/ignaciopaz/rrhh.git](https://github.com/ignaciopaz/rrhh.git)
    - HOST: github.com
    - Repository Path: /ignaciopaz/rrhh
 3. Clic en Next.
