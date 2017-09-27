@@ -7,6 +7,15 @@ Aplicación de ejemplo con Spring para agendar entrevistas con candidatos según l
 - Descargar e instalar [Java development kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) o posterior.
 - Descargar e instalar la última versión de [Eclipse](https://www.eclipse.org/downloads/) IDE para Java.
 
+## Configurar Eclipse
+1. Ir a menú Window > Preferences
+2. Ir a Java > Installed JREs
+3. Verificar que el path de Java sea el de donde se instaló JDK, ejemplo: **C:\Java\jdk1.8.0_74**
+4. Si dice JRE, Remove y agregar uno nuevo
+   - Elegir Standard VM
+   - En JRE home, agregar el Path Correcto. Ejemplo: **C:\Java\jdk1.8.0_74**
+   - Finish
+
 ## Importar el proyecto en Eclipse
 Para importa el proyecto en Eclipse se deben seguir los siguientes pasos:
 1. Ir **Menú File > Import > Git > Projects from Git**.
