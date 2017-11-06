@@ -49,7 +49,7 @@
 		  <p>Resultados de entrevistas asignadas con fecha de entrevista igual o posterior a <strong><span th:text="${#dates.format(fechaDesde, 'dd-MM-yyyy')}"></span></strong></p>
 		 
 		  <div th:if="${entrevistas.empty}" class="alert alert-warning">
-			No se encontraron candidatos que posean los conocimientos requeridos para la búsqueda.
+			No se encontraron entrevistas con las características de la búsqueda.
 		  </div>
 		  <div th:if="${!entrevistas.empty}">
 			  <div class="form-group">
