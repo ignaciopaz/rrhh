@@ -44,7 +44,7 @@ public class BusquedaLaboral {
 
 	public void agregarEntrevista(Candidato c, Date fechaHoraEntrevista) {
 		//Patrón Creador
-		Entrevista e = new Entrevista(c, fechaHoraEntrevista);
+		Entrevista e = new Entrevista(c, this, fechaHoraEntrevista);
 		entrevistas.add(e);
 	}
 

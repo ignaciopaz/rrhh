@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import edu.utn.frro.ds.reverseengineering.rrhh.dao.BusquedaLaboralDao;
-import edu.utn.frro.ds.reverseengineering.rrhh.dao.CandidatosDao;
+import edu.utn.frro.ds.reverseengineering.rrhh.dao.CandidatoDao;
 import edu.utn.frro.ds.reverseengineering.rrhh.dao.ConocimientoDao;
 import edu.utn.frro.ds.reverseengineering.rrhh.domain.BusquedaLaboral;
 import edu.utn.frro.ds.reverseengineering.rrhh.domain.Candidato;
@@ -25,7 +25,7 @@ import edu.utn.frro.ds.reverseengineering.rrhh.domain.Conocimiento;
 public class Application {
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 	@Autowired private BusquedaLaboralDao busquedaLaboralDao;
-	@Autowired private CandidatosDao candidatosDao;
+	@Autowired private CandidatoDao candidatoDao;
 	@Autowired private ConocimientoDao conocimientoDao;
 	
     public static void main(String[] args) {
@@ -101,14 +101,14 @@ public class Application {
 			candidatoJava.agregarConocimiento(html);
 			candidatoJava.agregarConocimiento(css);
 			
-			candidatosDao.save(candidatoJava);
+			candidatoDao.save(candidatoJava);
 			
 			Candidato sabeTodo = new Candidato("Juan", "Sabetodo");
 			Collection<Conocimiento> casiTodo = conocimientoDao.findAll();
 			casiTodo.remove(italiano);
 			sabeTodo.agregarConocimientos(casiTodo);
 			
-			candidatosDao.save(sabeTodo);
+			candidatoDao.save(sabeTodo);
 			
 			Candidato candidatoJavaIngles = new Candidato("John", "Java");
 			candidatoJavaIngles.agregarConocimiento(java);
@@ -117,12 +117,12 @@ public class Application {
 			candidatoJavaIngles.agregarConocimiento(html);
 			candidatoJavaIngles.agregarConocimiento(css);
 			
-			candidatosDao.save(candidatoJavaIngles);
+			candidatoDao.save(candidatoJavaIngles);
 			
 			Candidato candidatoNet = new Candidato("Peter", "PuntoNet");
 			candidatoNet.agregarConocimiento(net);
 			candidatoNet.agregarConocimiento(csharp);
-			candidatosDao.save(candidatoNet);
+			candidatoDao.save(candidatoNet);
 			
 			Candidato candidatoNetFS = new Candidato("Peter", "FullNet");
 			candidatoNetFS.agregarConocimiento(net);
@@ -131,7 +131,7 @@ public class Application {
 			candidatoNetFS.agregarConocimiento(html);
 			candidatoNetFS.agregarConocimiento(angularJs);			
 			
-			candidatosDao.save(candidatoNetFS);			
+			candidatoDao.save(candidatoNetFS);			
 			
 		};
 	}

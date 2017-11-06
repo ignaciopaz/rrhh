@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+  <body>
+  	<div class="container" th:fragment="header">
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+		  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		 
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/entrevista/agendar') ? 'active':''}" class="nav-item">
+		        <a class="nav-link" href="/entrevista/agendar">Agendar Entrevistas</a>
+		      </li>
+		      <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/entrevista/buscar') ? 'active':''}" class="nav-item">
+		        <a class="nav-link" href="/entrevista/buscar">Buscar Entrevistas</a>
+		      </li>      
+		    </ul>
+		  </div>
+		</nav>
+	</div>
+  </body>
+</html>
