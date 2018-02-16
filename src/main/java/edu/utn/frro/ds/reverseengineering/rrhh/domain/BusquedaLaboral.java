@@ -20,10 +20,11 @@ public class BusquedaLaboral {
 	@ManyToMany
     @JoinTable(name="busqueda_conocimientos")
 	private Collection<Conocimiento> conocimientosBuscados = new ArrayList<Conocimiento>();
-	//En UML2, el siguiente atributo sería equivalente a: entrevistas:Entrevista[*]
+	//En UML2, el siguiente atributo sería equivalente a: conocimientosBuscados:Conocimiento[*]
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_busqueda") 
 	private Collection<Entrevista> entrevistas;
+	//En UML2, el siguiente atributo sería equivalente a: entrevistas:Entrevista[*]
 	
 	public BusquedaLaboral() {
 		this.estado="activo";
