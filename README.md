@@ -1,7 +1,7 @@
 # UTN FRRO - Asignatura: Diseño de Sistemas.
 ## RRHH
-Aplicación de ejemplo con Spring para agendar entrevistas con candidatos según los conocimientos requeridos.
-- Link para ver la aplicación online: [https://utn-frro-ds-rrhh.herokuapp.com/](https://utn-frro-ds-rrhh.herokuapp.com/)
+Aplicación académica de ejemplo con Spring para agendar entrevistas con candidatos según los conocimientos requeridos.
+- Link para ver la aplicación online: [https://utn-frro-ds-rrhh.herokuapp.com/](https://utn-frro-ds-rrhh.herokuapp.com/) (Puede tardar en cargar la primera vez).
 
 ## Software necesario para correr el proyecto
 - Descargar e instalar JDK [Java development kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) o posterior.
