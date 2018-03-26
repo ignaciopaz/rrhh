@@ -12,7 +12,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-
+/*
+ * Test básico automatizado con Selenium WebDriver para validar que la aplicación funciona en Chrome.
+ */
 public class Agendar {
   private WebDriver driver;
   private boolean acceptNextAlert = true;
