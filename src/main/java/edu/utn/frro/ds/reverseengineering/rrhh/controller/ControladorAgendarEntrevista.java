@@ -23,17 +23,19 @@ import edu.utn.frro.ds.reverseengineering.rrhh.domain.Conocimiento;
  * para una búsqueda laboral definida en una consultora de RRHH. 
  */
 @Controller
-public class ControladorBusquedaCandidatos {
+public class ControladorAgendarEntrevista {
 	@Autowired private BusquedaLaboralDao busquedasDao;
 	@Autowired private CandidatoDao candidatoDao;
 	
 	private BusquedaLaboral busquedaLaboral; //En UML2, equivalente a: bl:BusquedaLaboral
 	
 	@RequestMapping("/entrevista/agendar") //indica el path en la url web
-	public String agendarentrevista(Model model) {
+	public String verBusquedasLaborales(Model model) {
 		Collection<BusquedaLaboral> busquedas = busquedasDao.buscarBusquedasActivas();
-		model.addAttribute("busquedas", busquedas); //carga en el modelo un objeto colección para que esté disponible en la vista.
-		return "entrevista/agendar/busquedas"; //nombre de la vista que se debe cargar. carga resources/templates/entrevista/busquedas.html
+		//carga en el modelo un objeto colección para que esté disponible en la vista.
+		model.addAttribute("busquedas", busquedas);
+		//nombre de la vista que se debe cargar y a la cual le llegan los objetos del modelo. carga resources/templates/entrevista/busquedas.html
+		return "entrevista/agendar/busquedas"; 
 	}
 	
 	@RequestMapping("/entrevista/agendar/candidatos") //indica el path en la url web
